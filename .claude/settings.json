@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "architect-skills": {
+      "source": {
+        "source": "github",
+        "repo": "luis-sanchez-navarro/samx-package"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "architecture@architect-skills": true
+  }
+}

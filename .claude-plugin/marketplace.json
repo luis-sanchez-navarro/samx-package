@@ -1,7 +1,8 @@
 {
   "name": "architect-skills",
   "owner": {
-    "name": "Architecture Team"
+    "name": "Luis Sanchez",
+    "url": "https://github.com/luis-sanchez-navarro"
   },
   "metadata": {
     "description": "Reusable skills for solution architects",
@@ -12,7 +13,13 @@
       "name": "architecture",
       "description": "Skills for solution architects",
       "version": "0.1.0",
-      "source": "./plugins/architecture"
+      "source": "./plugins/architecture",
+      "author": {
+        "name": "Luis Sanchez"
+      },
+      "homepage": "https://github.com/luis-sanchez-navarro/samx-package",
+      "repository": "https://github.com/luis-sanchez-navarro/samx-package",
+      "license": "MIT"
     }
   ]
 }

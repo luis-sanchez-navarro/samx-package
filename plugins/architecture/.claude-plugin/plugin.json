@@ -1,5 +1,12 @@
 {
   "name": "architecture",
   "description": "Skills for solution architects",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "author": {
+    "name": "Luis Sanchez",
+    "url": "https://github.com/luis-sanchez-navarro"
+  },
+  "homepage": "https://github.com/luis-sanchez-navarro/samx-package",
+  "repository": "https://github.com/luis-sanchez-navarro/samx-package",
+  "license": "MIT"
 }
