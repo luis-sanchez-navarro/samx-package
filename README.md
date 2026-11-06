@@ -82,6 +82,9 @@ From a clone of this repo:
 Then ask: *"Draft an ADR: we need to decide between REST and GraphQL for our
 new partner API."*
 
+How this repo works, and how another repo consumes its plugins and skills:
+[docs/team-guide.md](docs/team-guide.md).
+
 ## Run the validator
 
 Both scripts take the same argument, print `OK` or one `ERROR: ...` line per
