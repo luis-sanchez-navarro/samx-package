@@ -1,0 +1,37 @@
+name: validate
+
+on: [push, pull_request]
+
+jobs:
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Manifests parse and versions match
+        run: |
+          set -euo pipefail
+          m=$(jq -r '.metadata.version' .claude-plugin/marketplace.json)
+          e=$(jq -r '.plugins[] | select(.name=="architecture") | .version' .claude-plugin/marketplace.json)
+          c=$(jq -r '.version' plugins/architecture/.claude-plugin/plugin.json)
+          x=$(jq -r '.version' plugins/architecture/.codex-plugin/plugin.json)
+          echo "marketplace=$m entry=$e claude=$c codex=$x"
+          [ "$m" = "$e" ] && [ "$e" = "$c" ] && [ "$c" = "$x" ]
+
+  scripts:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: plugins/architecture/skills/draft-adr
+    steps:
+      - uses: actions/checkout@v4
+      - name: check-adr.sh
+        if: runner.os != 'Windows'
+        shell: bash
+        run: bash scripts/check-adr.sh references/sample-adr.md
+      - name: check-adr.ps1
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: powershell -File scripts/check-adr.ps1 references/sample-adr.md
